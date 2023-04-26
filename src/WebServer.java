@@ -47,14 +47,12 @@ public class WebServer {
             connectionThread.start();
             
             System.out.println("New connection on port 6789...\r\n");
-            BufferedReader inFromConsole = new BufferedReader(new InputStreamReader(System.in));
-            String command = inFromConsole.readLine();
+           
             Thread.sleep(2000);
             System.out.println("New connection");
-            if (command.equals("stop")) {
-                stopServer = true;
-                break;
-            }
+            
+            stopServer = true;
+            break;
 
         }
         // serverSocket.close();
