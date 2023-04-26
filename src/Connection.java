@@ -7,7 +7,6 @@ import java.util.HashMap;
 
 /**
  * Connection Object.
- *
  * Handles requests made by a client socket on behalf of the server by
  * sending appropriate response. Implements the Runnable interface to
  * allows the Connection object to run inside of a thread.
