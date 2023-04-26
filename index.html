@@ -4,10 +4,58 @@
 <head>
     <title>Maurice Harris - Network Project 1</title>
 </head>
+<style>
+
+body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+		}
+		form {
+			background-color: #ffffff;
+			border: 1px solid #cccccc;
+			border-radius: 5px;
+			padding: 20px;
+			max-width: 400px;
+			margin: 50px auto;
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #cccccc;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #ffffff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+</style>
 
 <body>
-<p>Hello, World! This is a very simple HTML document.</p>
-<img src="placeholder.jpg" alt="placeholder image" id="placeholder_image">
+	<h1>Login with shivank</h1>
+	<form action="login" method="POST">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username"><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br><br>
+		<input type="submit" value="Submit">
+	</form>
 </body>
 
 </html>

@@ -1,7 +1,10 @@
 package src;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Time;
 
 /**
  * WebServer Object.
@@ -23,6 +26,7 @@ public class WebServer {
      *
      *
      */
+    private static boolean stopServer = false;
     public static void main(String[] args) throws Exception {
 
         // Create ServerSocket on LocalHost, port 6789
@@ -30,7 +34,8 @@ public class WebServer {
         System.out.println("Listening for connections on port 6789...\r\n");
 
         // Listen for new client connections
-        while(true) {
+        boolean set = true;
+        while(!stopServer) {
 
             // Accept new client connection
             Socket connectionSocket = serverSocket.accept();
@@ -40,7 +45,19 @@ public class WebServer {
 
             // Start the connection thread
             connectionThread.start();
+            
             System.out.println("New connection on port 6789...\r\n");
+            BufferedReader inFromConsole = new BufferedReader(new InputStreamReader(System.in));
+            String command = inFromConsole.readLine();
+            Thread.sleep(2000);
+            System.out.println("New connection");
+            if (command.equals("stop")) {
+                stopServer = true;
+                break;
+            }
+
         }
+        // serverSocket.close();
+        // System.exit(0);
     }
 }
