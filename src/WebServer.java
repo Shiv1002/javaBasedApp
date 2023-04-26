@@ -29,9 +29,9 @@ public class WebServer {
     private static boolean stopServer = false;
     public static void main(String[] args) throws Exception {
 
-        // Create ServerSocket on LocalHost, port 6789
-        ServerSocket serverSocket = new ServerSocket(6789);
-        System.out.println("Listening for connections on port 6789...\r\n");
+        // Create ServerSocket on LocalHost, port 8000
+        ServerSocket serverSocket = new ServerSocket(8000);
+        System.out.println("Listening for connections on port 8000...\r\n");
 
         // Listen for new client connections
         boolean set = true;
@@ -46,10 +46,10 @@ public class WebServer {
             // Start the connection thread
             connectionThread.start();
             
-            System.out.println("New connection on port 6789...\r\n");
+            System.out.println("New connection on port 8000...\r\n");
            
             Thread.sleep(2000);
-            System.out.println("New connection");
+            
             
             stopServer = true;
             break;
